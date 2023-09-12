@@ -14,10 +14,10 @@ public class CategoryDao {
         try {
             List<String> lines = Files.readAllLines(Paths.get("./categories.txt"));
             List<Category> categories = new ArrayList<>();
-            for(String line : lines)
-            {
+            for (String line : lines) {
                 categories.add(new Category(line));
             }
+            return categories;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -27,5 +27,11 @@ public class CategoryDao {
 
 
     public void add(Category category) {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("./categories.txt"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
