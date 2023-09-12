@@ -14,7 +14,7 @@ public class CategoryCommandHandler extends BaseCommandHandler {
     private CategoryDao categoryDao;
 
     public CategoryCommandHandler() {
-         categoryDao = new CategoryDao();
+        categoryDao = new CategoryDao();
     }
 
     @Override
@@ -25,23 +25,22 @@ public class CategoryCommandHandler extends BaseCommandHandler {
     @Override
     public void handle(UserInputCommand command) {
 
-        if (command.getAction()==null) System.out.println("What you want to do?");
-        switch (command.getAction())
-        {
-            case "" :
+        if (command.getAction() == null) System.out.println("What you want to do?");
+        switch (command.getAction()) {
+            case "":
                 System.out.println();
-            case "list" :
+            case "list":
                 System.out.println("Category list:");
-               List<Category> categories = categoryDao.findAll();
-               categories.forEach(System.out::println);
+                List<Category> categories = categoryDao.findAll();
+                categories.forEach(System.out::println);
                 break;
-            case "add" :
+            case "add":
                 System.out.println("Add category");
                 String categoryName = command.getParam().get(0);
                 categoryDao.add(new Category(categoryName));
                 break;
             default:
-                throw new IllegalArgumentException(String.format("Unknow action %s from command %s",command.getAction(),command.getCommand()));
+                throw new IllegalArgumentException(String.format("Unknow action %s from command %s", command.getAction(), command.getCommand()));
 
         }
     }
