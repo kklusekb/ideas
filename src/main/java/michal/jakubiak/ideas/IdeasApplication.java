@@ -1,6 +1,7 @@
 package michal.jakubiak.ideas;
 
 
+import michal.jakubiak.ideas.handlers.CategoryCommandHandler;
 import michal.jakubiak.ideas.handlers.CommandHandler;
 import michal.jakubiak.ideas.handlers.HelpCommandHandler;
 import michal.jakubiak.ideas.handlers.QuiteCommandHandler;
@@ -25,6 +26,7 @@ public class IdeasApplication {
         List<CommandHandler> handlers = new ArrayList<>();
         handlers.add(new HelpCommandHandler()); //help
         handlers.add(new QuiteCommandHandler());
+        handlers.add(new CategoryCommandHandler());
 
         boolean applicationLoop = true;
         while (applicationLoop) {

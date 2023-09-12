@@ -10,6 +10,7 @@ public class HelpCommandHandler extends BaseCommandHandler {
     public void handle(UserInputCommand command) {
         System.out.println("Help");
         System.out.println("<Command>  <Action> <param1>  <param2>  <param3>");
+        System.out.println("Commands: help  category quite");
     }
 
 
