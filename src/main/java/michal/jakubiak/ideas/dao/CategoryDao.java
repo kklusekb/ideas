@@ -29,6 +29,8 @@ public class CategoryDao {
     public void add(Category category) {
         try {
             List<String> lines = Files.readAllLines(Paths.get("./categories.txt"));
+            lines.add(category.getName());
+            Files.writeString(Paths.get("./categories.txt"),String.join("\n",lines));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
