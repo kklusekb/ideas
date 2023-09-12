@@ -37,6 +37,8 @@ public class CategoryCommandHandler extends BaseCommandHandler {
                 break;
             case "add" :
                 System.out.println("Add category");
+                String categoryName = command.getParam().get(0);
+                categoryDao.add(new Category(categoryName));
                 break;
             default:
                 throw new IllegalArgumentException(String.format("Unknow action %s from command %s",command.getAction(),command.getCommand()));

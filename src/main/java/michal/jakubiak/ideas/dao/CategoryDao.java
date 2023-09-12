@@ -8,4 +8,8 @@ public class CategoryDao {
     public List<Category> findAll() {
         return null;
     }
+
+
+    public void add(Category category) {
+    }
 }
